@@ -4,16 +4,24 @@ import 'package:provider/provider.dart';
 import 'package:window_size/window_size.dart';
 import './catalog.dart';
 import './item_tile.dart';
-
+import './api/item.dart';
 
 class OrderPage extends StatelessWidget {
   const OrderPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Catalog cat= new Catalog();
+    Item a=cat.getByIndex(0);
     return Scaffold(
       
-      body:  Selector<Catalog, int?>(
+      body:
+      Text(
+       a.name,
+      
+    )  
+      /*
+      Selector<Catalog, int?>(
         // Selector is a widget from package:provider. It allows us to listen
         // to only one aspect of a provided value. In this case, we are only
         // listening to the catalog's `itemCount`, because that's all we need
@@ -42,6 +50,7 @@ class OrderPage extends StatelessWidget {
           },
         ),
       ),
+      */
     );
   }
 }
