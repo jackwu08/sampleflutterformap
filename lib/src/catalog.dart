@@ -5,9 +5,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'api/fetch.dart';
-import 'api/item.dart';
-import 'api/page.dart';
+import './api/fetch.dart';
+import './api/item.dart';
+import './api/page.dart';
 
 /// The [Catalog] holds items in memory, provides a synchronous access
 /// to them via [getByIndex], and notifies listeners when there is any change.
