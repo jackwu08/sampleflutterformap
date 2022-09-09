@@ -8,6 +8,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:window_size/window_size.dart';
+import './src/orderpage.dart';
 
 void main() {
   setupWindow();
@@ -81,6 +82,7 @@ class MyStatefulWidget extends StatefulWidget {
   State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
 }
 
+
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
@@ -94,10 +96,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       'Index 1: Business',
       style: optionStyle,
     ),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
+    OrderPage(),
     Text(
       'Index 3: Settings',
       style: optionStyle,
@@ -121,7 +120,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
+          
           BottomNavigationBarItem(
+          
             icon: Icon(Icons.home),
             label: 'Home',
             //backgroundColor: Colors.red,
