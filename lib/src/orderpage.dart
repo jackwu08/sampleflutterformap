@@ -16,10 +16,22 @@ class OrderPage extends StatelessWidget {
     return Scaffold(
       
       body:
-      Text(
-       a.name,
-      
-    )  
+      ListView(
+          children: const <Widget>[
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+            ),
+            ListTile(
+              leading: Icon(Icons.photo_album),
+              title: Text('Album'),
+            ),
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text('Phone'),
+            ),
+          ],
+        ),  
       /*
       Selector<Catalog, int?>(
         // Selector is a widget from package:provider. It allows us to listen
