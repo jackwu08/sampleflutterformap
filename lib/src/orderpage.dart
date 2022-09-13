@@ -28,11 +28,7 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Infinite List Sample'),
-      ),
-      body: Selector<Catalog, int?>(
+    return  Selector<Catalog, int?>(
         // Selector is a widget from package:provider. It allows us to listen
         // to only one aspect of a provided value. In this case, we are only
         // listening to the catalog's `itemCount`, because that's all we need
@@ -60,7 +56,7 @@ class MyHomePage extends StatelessWidget {
             return ItemTile(item: item);
           },
         ),
-      ),
+    
     );
   }
 }
