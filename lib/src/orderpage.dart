@@ -13,27 +13,26 @@ class OrderPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Catalog cat= new Catalog();
     Item a=cat.getByIndex(0);
+    return ChangeNotifierProvider<Catalog>(
+      create: (context) => Catalog(),
+      child: const MaterialApp(
+        title: 'Infinite List Sample',
+        home: MyHomePage(),
+      ),
+    );;
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-      
-      body:
-      ListView(
-          children: const <Widget>[
-            ListTile(
-              leading: Icon(Icons.map),
-              title: Text('Map'),
-            ),
-            ListTile(
-              leading: Icon(Icons.photo_album),
-              title: Text('Album'),
-            ),
-            ListTile(
-              leading: Icon(Icons.phone),
-              title: Text('Phone'),
-            ),
-          ],
-        ),  
-      /*
-      Selector<Catalog, int?>(
+      appBar: AppBar(
+        title: const Text('Infinite List Sample'),
+      ),
+      body: Selector<Catalog, int?>(
         // Selector is a widget from package:provider. It allows us to listen
         // to only one aspect of a provided value. In this case, we are only
         // listening to the catalog's `itemCount`, because that's all we need
@@ -62,7 +61,6 @@ class OrderPage extends StatelessWidget {
           },
         ),
       ),
-      */
     );
   }
 }
