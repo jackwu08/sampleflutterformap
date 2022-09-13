@@ -14,7 +14,9 @@ void main() {
       await tester.pumpAndSettle(const Duration(seconds: 1));
 
       // Verify if the appropriate message is shown.
-      expect(find.text('Infinite List'), findsOneWidget);
+      const loadingDuration = Duration(milliseconds: 500);
+       // At first, the catalog shows only "..." (loading items).
+    expect(find.text('...'), findsWidgets);
   });
    testWidgets('Infinite list smoke test', (tester) async {
     await _startapp(tester, 'root', 'password');
