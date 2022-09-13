@@ -8,6 +8,13 @@ void main() {
     await _startapp(tester, 'root', 'password');
     // Check if any solid favorite icon shows up.
       expect(find.byIcon(Icons.home), findsWidgets);
+
+      // Tap the first item's icon to add it to favorites.
+      await tester.tap(find.byIcon(Icons.home).first);
+      await tester.pumpAndSettle(const Duration(seconds: 1));
+
+      // Verify if the appropriate message is shown.
+      expect(find.text('Infinite List'), findsOneWidget);
   });
 
 }
