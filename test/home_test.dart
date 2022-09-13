@@ -7,10 +7,10 @@ void main() {
   testWidgets('sign in', (tester) async {
     await _startapp(tester, 'root', 'password');
     // Check if any solid favorite icon shows up.
-      expect(find.byIcon(Icons.home), findsWidgets);
+      expect(find.byIcon(Icons.school), findsWidgets);
 
       // Tap the first item's icon to add it to favorites.
-      await tester.tap(find.byIcon(Icons.home).first);
+      await tester.tap(find.byIcon(Icons.school).first);
       await tester.pumpAndSettle(const Duration(seconds: 1));
 
       // Verify if the appropriate message is shown.
@@ -19,9 +19,9 @@ void main() {
    testWidgets('Infinite list smoke test', (tester) async {
     await _startapp(tester, 'root', 'password');
     // Tap the first item's icon to add it to favorites.
-      await tester.tap(find.byIcon(Icons.home).first);
+      await tester.tap(find.byIcon(Icons.school).first);
       await tester.pumpAndSettle(const Duration(seconds: 1));
-      
+
     const loadingDuration = Duration(milliseconds: 500);
 
     // At first, the catalog shows only "..." (loading items).
