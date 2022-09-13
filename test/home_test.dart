@@ -18,6 +18,17 @@ void main() {
        // At first, the catalog shows only "..." (loading items).
     expect(find.text('...'), findsWidgets);
   });
+  testWidgets('tap business', (tester) async {
+     await _startapp(tester, 'root', 'password');
+     expect(find.byIcon(Icons.business), findsWidgets);
+     await tester.tap(find.byIcon(Icons.school).first);
+      await tester.pumpAndSettle(const Duration(seconds: 1));
+
+      // Verify if the appropriate message is shown.
+      const loadingDuration = Duration(milliseconds: 500);
+       // At first, the catalog shows only "..." (loading items).
+    expect(find.text('Index 1: Business'), findsWidgets);
+  });
    testWidgets('Infinite list smoke test', (tester) async {
     await _startapp(tester, 'root', 'password');
     // Tap the first item's icon to add it to favorites.
