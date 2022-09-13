@@ -21,7 +21,7 @@ void main() {
   testWidgets('tap business', (tester) async {
      await _startapp(tester, 'root', 'password');
      expect(find.byIcon(Icons.business), findsWidgets);
-     await tester.tap(find.byIcon(Icons.school).first);
+     await tester.tap(find.byIcon(Icons.business).first);
       await tester.pumpAndSettle(const Duration(seconds: 1));
 
       // Verify if the appropriate message is shown.
